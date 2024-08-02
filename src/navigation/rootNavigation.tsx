@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from '../screens/homeScreen';
 import ContinentScreen from '../screens/continent';
 import QuestScreen from '../screens/quest';
+import FinalScreen from '../screens/finalScreen';
 
 
 
@@ -37,7 +38,11 @@ const MyStack = () => {
                     component = {QuestScreen}
                     options = {{title: 'Quest'}}
                 />
-                
+                <Stack.Screen
+                    name = 'final'
+                    component = {FinalScreen}
+                    options = {{title: 'Final'}}
+                />                
             </Stack.Navigator>
         </NavigationContainer>
     )
