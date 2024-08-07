@@ -18,6 +18,7 @@ const QuestScreen = ({navigation}: any) => {
     const [error, setError] = useState('')
     const [index, setIndex] = useState<number>()
     const [answers, setAnswers] = useState<string[]>()
+    const [points, setPoints] = useState(0)
     
 
     useEffect(()=>{
@@ -33,13 +34,32 @@ const QuestScreen = ({navigation}: any) => {
         (questions && index!==undefined && setAnswers([...questions[index].wrongAnswers, questions[index].rightAnswer]))
     }, [index])
     
+    console.log(points)
     
     return(
         <>
         <ImageBackground resizeMode="cover" style = {styles.backgroundImageStyle} source={{uri: 'https://abali.ru/wp-content/uploads/2011/01/rus_flag-1600x1200.jpg'}}>
         {questions && index!==undefined && <SvgUri style = {styles.svgStyle} uri={questions[index].flag} />}
-        {questions && index!==undefined && <FlatList data={answers?.sort(()=>Math.random()-0.5)} renderItem={({item})=><FlatListItem  answerText={item} index={index} onPress={(index)=>{questions[index].rightAnswer===item ? setIndex(index+1) : setIndex(index)}}/>}/>}
+        {questions && index!==undefined && <FlatList data={answers?.sort(()=>Math.random()-0.5)} renderItem={({item})=><FlatListItem isCorrectAnswer={questions[index].rightAnswer===item} answerText={item} index={index} onPress={(index)=>{
+            if(questions[index].rightAnswer===item){
+                setPoints(points+1)
+                setIndex(index+1)
+            }
+            else if(questions[index].id+1===questions.length){
+                if(questions[index].rightAnswer===item){
+                    setPoints(points+1) 
+                    setTimeout(()=>{navigation.navigate('final', points)}, 1000)
+                }
+                else{
+                    setTimeout(()=>{navigation.navigate('final', points)}, 1000)
+                }
+            }
+            else{
+                setIndex(index+1)
+            }
+        }}/>}/>}
         </ImageBackground>
+        {questions && index!==undefined && <Text style={styles.textStyle}>{index+1}/{questions.length}</Text>}
         </>
     ) 
 }
@@ -48,7 +68,8 @@ const QuestScreen = ({navigation}: any) => {
 
 const styles = StyleSheet.create({
     svgStyle: {width: '100%', height: 196.5, marginTop: 0},
-    backgroundImageStyle: {width: '100%', height: '100%', flex: 1}
+    backgroundImageStyle: {width: '100%', height: '100%', flex: 1},
+    textStyle: {color: 'black', fontSize: 20, borderRadius: 8, textAlign: 'center'}
 })
 
 
