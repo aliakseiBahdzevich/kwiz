@@ -35,6 +35,7 @@ const QuestScreen = ({navigation}: any) => {
     }, [index])
     
     console.log(points)
+    console.log(index)
     
     return(
         <>
@@ -42,20 +43,17 @@ const QuestScreen = ({navigation}: any) => {
         {questions && index!==undefined && <SvgUri style = {styles.svgStyle} uri={questions[index].flag} />}
         {questions && index!==undefined && <FlatList data={answers?.sort(()=>Math.random()-0.5)} renderItem={({item})=><FlatListItem isCorrectAnswer={questions[index].rightAnswer===item} answerText={item} index={index} onPress={(index)=>{
             if(questions[index].rightAnswer===item){
-                setPoints(points+1)
-                setIndex(index+1)
-            }
-            else if(questions[index].id+1===questions.length){
-                if(questions[index].rightAnswer===item){
-                    setPoints(points+1) 
-                    setTimeout(()=>{navigation.navigate('final', points)}, 1000)
+                setPoints(points+1)  
+                if(questions[index].id+1===questions.length){ 
+                    navigation.navigate('final', points)
                 }
-                else{
-                    setTimeout(()=>{navigation.navigate('final', points)}, 1000)
-                }
+                setIndex(index+1)    
             }
-            else{
-                setIndex(index+1)
+            else{               
+                if(questions[index].id+1===questions.length){
+                    navigation.navigate('final', points)
+                }
+                setIndex(index+1)   
             }
         }}/>}/>}
         </ImageBackground>
