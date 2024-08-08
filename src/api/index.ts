@@ -15,14 +15,25 @@ export const supabase = createClient(supabaseUrl, supabaseKey, {
   })
   
 
-const getQuestions = async() => {
+export const getQuestions = async(continent: string) => {
     let { data: questions, error } = await supabase
-        .from('questions')
-        .select('*')
-    console.log(questions)
+      .from('questions')
+      .select()
+      .eq('continent', continent)
     return questions
 }
 
-export default getQuestions
+export const setRecords = async(nickname: string, points: number, continent: string) => {
+    let { data: records, error } = await supabase
+      .from('records')
+      .insert([
+        {nickname: nickname, points: points, continent: continent}
+      ])
+      .select()
+    console.log(error)
+    return records
+}
+
+
 
           

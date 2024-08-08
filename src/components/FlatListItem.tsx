@@ -10,13 +10,13 @@ type Props = {
     onPress: (index: number)=>void
     answerText: string
     isCorrectAnswer: boolean
-    //disable: boolean
+    disable: boolean
+    setDisable: (disable: boolean)=>void
 }
 
-const FlatListItem = ({index, onPress, answerText, isCorrectAnswer}: Props) => {
+const FlatListItem = ({index, onPress, answerText, isCorrectAnswer, disable, setDisable}: Props) => {
     
     const [bgColor, setBgColor] = useState('rgba(245,255,250,1)')
-    const [disable, setDisable] = useState(false)
 
     useEffect(()=>{
         setDisable(false)
@@ -25,7 +25,7 @@ const FlatListItem = ({index, onPress, answerText, isCorrectAnswer}: Props) => {
     const handlePress = () => {
         setDisable(true)
         isCorrectAnswer ? setBgColor('green') : setBgColor('red')
-        setTimeout(()=>{onPress(index); setBgColor('rgba(245,255,250,1)')}, 10);
+        setTimeout(()=>{onPress(index); setBgColor('rgba(245,255,250,1)')}, 500);
     }
 
     
