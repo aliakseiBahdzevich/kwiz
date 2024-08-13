@@ -21,6 +21,7 @@ const QuestScreen = ({navigation, route}: any) => {
     const [answers, setAnswers] = useState<string[]>()
     const [points, setPoints] = useState(0)
     const [disable, setDisable] = useState(false)
+    
     useEffect(()=>{
         getQuestions(route.params.continent)
             .then((res: any)=>{
@@ -28,7 +29,7 @@ const QuestScreen = ({navigation, route}: any) => {
                 setIndex(0)
             })
             .catch((er: any)=>setError(er))
-        }, [])
+    }, [])
     
     useEffect(()=>{
         (questions && index!==undefined && setAnswers([...questions[index].wrongAnswers, questions[index].rightAnswer]?.sort(()=>Math.random()-0.5)))
@@ -78,7 +79,7 @@ const QuestScreen = ({navigation, route}: any) => {
 
 const styles = StyleSheet.create({
     svgStyle: {width: '100%', height: 196.5, marginTop: 0},
-    backgroundImageStyle: {width: '100%', height: '100%', flex: 1},
+    backgroundImageStyle: {width: '100%', height: '100%', flex: 1, justifyContent: 'center', alignItems: 'center'},
     textStyle: {color: 'black', fontSize: 20, borderRadius: 8, textAlign: 'center'}
 })
 

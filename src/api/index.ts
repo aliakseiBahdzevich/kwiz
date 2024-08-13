@@ -23,15 +23,43 @@ export const getQuestions = async(continent: string) => {
     return questions
 }
 
-export const setRecords = async(nickname: string, points: number, continent: string) => {
+export const setRecords = async(nickname: string, points: number, continent: string, deviceId: string) => {
     let { data: records, error } = await supabase
       .from('records')
       .insert([
-        {nickname: nickname, points: points, continent: continent}
+        {nickname: nickname, points: points, continent: continent, deviceId}
       ])
       .select()
     console.log(error)
     return records
+}
+
+export const updateRecords = async(nickname: string, points: number, continent: string, deviceId: string) => {
+    let {data: records, error} = await supabase
+      .from('records')
+      .update({points: points})
+      .eq('nickname', nickname)
+      .eq('continent', continent)
+      .select()
+    console.log(error)
+    return records
+}
+
+export const getRecordsContinent = async(continent: string) => {
+  let { data: records, error } = await supabase
+    .from('records')
+    .select()
+    .eq('continent', continent)
+    console.log(records)
+  return records
+}
+
+export const getRecords = async() => {
+  let { data: records, error } = await supabase
+    .from('records')
+    .select('*')
+  console.log(records)
+  return records
 }
 
 

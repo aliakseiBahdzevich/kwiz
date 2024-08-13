@@ -19,6 +19,14 @@ export type QuestionType = {
     id: number;
 }
 
+export type RecordsType = {
+    nickname: string;
+    points: number;
+    continent: string;
+    id: number;
+    deviceId: string
+}
+
 
 const MyStack = () => {
     return(

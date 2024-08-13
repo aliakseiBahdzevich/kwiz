@@ -10,6 +10,9 @@ const HomeScreen = ({navigation}: any) => {
             <TouchableOpacity onPress={()=>navigation.navigate('continent')} style = {styles.opacityStyle}>
                 <Text style = {styles.textStyle}>START</Text>
             </TouchableOpacity>
+            <TouchableOpacity onPress={()=>navigation.navigate('records')} style = {styles.opacityStyle}>
+                <Text style = {styles.textStyle}>RECORDS</Text>
+            </TouchableOpacity>
         </ImageBackground>
     )
 }
