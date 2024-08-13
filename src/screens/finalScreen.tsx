@@ -15,7 +15,7 @@ const FinalScreen = ({navigation, route}: any) => {
     const [error, setError] = useState('')
     const [deviceId, setDeviceId] = useState('')
     const [errorNick, setErrorNick] = useState('')
-    const [borderColor, setBorderColor] = useState('')
+    
 
 
     useEffect(()=>{
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
     },
     buttonText: {
         fontSize: 30,
-        lineHeight: 28,
+        lineHeight: 30,
         fontWeight: '600',
         color: '#000000',
         margin: 15
@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
         width: 300,
         borderColor: '#0569FF',
         fontSize: 30,
-        lineHeight: 28,
+        lineHeight: 30,
         fontWeight: '600',
         color: '#000000',
         margin: 15,

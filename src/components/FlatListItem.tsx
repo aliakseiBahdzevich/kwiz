@@ -56,13 +56,13 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         backgroundColor: '#0569FF',
         borderColor: '#0569FF',
-        height: 100,
-        width: 300, 
+        height: '100%',
+        width: '100%', 
         margin: 15
     },
     buttonText: {
         fontSize: 30,
-        lineHeight: 28,
+        lineHeight: 30,
         fontWeight: '600',
         color: '#fff',
       }

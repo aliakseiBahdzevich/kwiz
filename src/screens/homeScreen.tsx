@@ -29,13 +29,13 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         backgroundColor: '#0569FF',
         borderColor: '#0569FF',
-        height: 100,
-        width: 300, 
+        height: '10%',
+        width: '50%', 
         margin: 15
     },
     buttonText: {
         fontSize: 30,
-        lineHeight: 28,
+        lineHeight: 30,
         fontWeight: '600',
         color: '#fff',
       }

@@ -6,7 +6,7 @@ import ContinentScreen from '../screens/continent';
 import QuestScreen from '../screens/quest';
 import FinalScreen from '../screens/finalScreen';
 import RecordsScreen from '../screens/records';
-import RecordsContinentScreen from '../screens/recordscont';
+
 
 
 
@@ -57,12 +57,7 @@ const MyStack = () => {
                     name = 'records'
                     component = {RecordsScreen}
                     options = {{title: 'Records'}}
-                />   
-                <Stack.Screen
-                    name = 'recordsContinent'
-                    component = {RecordsContinentScreen}
-                    options = {{title: 'Continent'}}
-                />                              
+                />                             
             </Stack.Navigator>
         </NavigationContainer>
     )
