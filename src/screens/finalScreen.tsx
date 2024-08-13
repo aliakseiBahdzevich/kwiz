@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
-import { ImageBackground, TouchableOpacity, Text, StyleSheet, TextInput, FlatList } from 'react-native';
+import { ImageBackground, TouchableOpacity, Text, StyleSheet, TextInput, FlatList, View } from 'react-native';
 import { getRecordsContinent, setRecords, updateRecords } from '../api';
 import { RecordsType } from '../navigation/rootNavigation';
 import DeviceInfo, { DeviceType } from 'react-native-device-info';
@@ -15,6 +15,7 @@ const FinalScreen = ({navigation, route}: any) => {
     const [error, setError] = useState('')
     const [deviceId, setDeviceId] = useState('')
     const [errorNick, setErrorNick] = useState('')
+    const [borderColor, setBorderColor] = useState('')
 
 
     useEffect(()=>{
@@ -77,22 +78,54 @@ const FinalScreen = ({navigation, route}: any) => {
 
     return(
         <>
-        <ImageBackground resizeMode="cover" style = {styles.backgroundImageStyle} source={{uri: 'https://abali.ru/wp-content/uploads/2011/01/rus_flag-1600x1200.jpg'}}>
-            <Text style = {styles.textStyle}>Points: {route.params.points}</Text>
-            <TextInput onChangeText={handleTextChange} value={nick} style = {styles.textStyle} placeholder='Enter nickname'></TextInput>
-            <TouchableOpacity disabled={disable} onPress={()=>{fun()}}>
-                <Text style={styles.textStyle}>{errorNick}Confirm</Text>
+        <View style = {styles.backgroundImageStyle}>
+            <Text style = {styles.buttonText}>Points: {route.params.points}</Text>
+            <TextInput onChangeText={handleTextChange} value={nick} style = {styles.inputText} placeholder='Enter nickname'></TextInput>
+            <TouchableOpacity disabled={disable} style = {styles.button} onPress={()=>{fun()}}>
+                <Text style={[styles.buttonText, {color: '#fff'}]}>{errorNick}Confirm</Text>
             </TouchableOpacity>
-        </ImageBackground>
+        </View>
         </>
         
     )
 }
 
 const styles = StyleSheet.create({
-    backgroundImageStyle: {flex: 1, backgroundColor: 'red'},
-    opacityStyle: {flex: 1, justifyContent: 'center', alignItems: 'center'},
-    textStyle: {color: 'black', fontSize: 45, backgroundColor: 'rgba(245,255,250,1)', borderRadius: 8}
+    backgroundImageStyle: {alignItems: 'center', justifyContent: 'center', flex: 1},
+    button: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 8,
+        paddingVertical: 8,
+        paddingHorizontal: 16,
+        borderWidth: 1,
+        backgroundColor: '#0569FF',
+        borderColor: '#0569FF',
+        height: 100,
+        width: 300, 
+        margin: 15
+    },
+    buttonText: {
+        fontSize: 30,
+        lineHeight: 28,
+        fontWeight: '600',
+        color: '#000000',
+        margin: 15
+    },
+    inputText: {
+        height: 100,
+        width: 300,
+        borderColor: '#0569FF',
+        fontSize: 30,
+        lineHeight: 28,
+        fontWeight: '600',
+        color: '#000000',
+        margin: 15,
+        borderWidth: 3,
+        borderRadius: 8, 
+        paddingLeft: 15
+    }
+
 })
 
 export default FinalScreen

@@ -6,22 +6,39 @@ import { View, Text, TouchableOpacity, StyleSheet, ImageBackground } from 'react
 
 const HomeScreen = ({navigation}: any) => {
     return(
-        <ImageBackground resizeMode="cover" style = {styles.backgroundImageStyle} source={{uri: 'https://abali.ru/wp-content/uploads/2011/01/rus_flag-1600x1200.jpg'}}>
-            <TouchableOpacity onPress={()=>navigation.navigate('continent')} style = {styles.opacityStyle}>
-                <Text style = {styles.textStyle}>START</Text>
+        <View style = {styles.backgroundImageStyle}>
+            <TouchableOpacity onPress={()=>navigation.navigate('continent')} style = {styles.button}>
+                <Text style = {styles.buttonText}>START</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={()=>navigation.navigate('records')} style = {styles.opacityStyle}>
-                <Text style = {styles.textStyle}>RECORDS</Text>
+            <TouchableOpacity onPress={()=>navigation.navigate('records')} style = {styles.button}>
+                <Text style = {styles.buttonText}>RECORDS</Text>
             </TouchableOpacity>
-        </ImageBackground>
+        </View>
     )
 }
 
 
 const styles = StyleSheet.create({
-    backgroundImageStyle: {width: '100%', height: '100%', flex: 1},
-    opacityStyle: {flex: 1, justifyContent: 'center', alignItems: 'center'},
-    textStyle: {color: 'black', fontSize: 45, backgroundColor: 'rgba(245,255,250,1)', borderRadius: 8}
+    backgroundImageStyle: {alignItems: 'center', justifyContent: 'center', flex: 1},
+    button: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 8,
+        paddingVertical: 8,
+        paddingHorizontal: 16,
+        borderWidth: 1,
+        backgroundColor: '#0569FF',
+        borderColor: '#0569FF',
+        height: 100,
+        width: 300, 
+        margin: 15
+    },
+    buttonText: {
+        fontSize: 30,
+        lineHeight: 28,
+        fontWeight: '600',
+        color: '#fff',
+      }
 })
 
 

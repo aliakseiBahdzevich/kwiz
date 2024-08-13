@@ -5,31 +5,48 @@ import { View, Text, TouchableOpacity, StyleSheet, ImageBackground } from 'react
 
 const ContinentScreen = ({navigation, route}: any) => {
     return(
-        <ImageBackground resizeMode="cover" style = {styles.backgroundImageStyle} source={{uri: 'https://abali.ru/wp-content/uploads/2011/01/rus_flag-1600x1200.jpg'}}>
-            <TouchableOpacity onPress={()=>navigation.navigate('quest', {continent: 'Europe'})} style = {styles.opacityStyle}>
-                <Text style = {styles.textStyle}>Europe</Text>
+        <View style = {styles.backgroundImageStyle}>
+            <TouchableOpacity onPress={()=>navigation.navigate('quest', {continent: 'Europe'})} style = {styles.button}>
+                <Text style = {styles.buttonText}>Europe</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={()=>navigation.navigate('quest', {continent: 'Asia'})} style = {styles.opacityStyle}>
-                <Text style = {styles.textStyle}>Asia</Text>
+            <TouchableOpacity onPress={()=>navigation.navigate('quest', {continent: 'Asia'})} style = {styles.button}>
+                <Text style = {styles.buttonText}>Asia</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={()=>navigation.navigate('quest', {continent: 'Africa'})} style = {styles.opacityStyle}>
-                <Text style = {styles.textStyle}>Africa</Text>
+            <TouchableOpacity onPress={()=>navigation.navigate('quest', {continent: 'Africa'})} style = {styles.button}>
+                <Text style = {styles.buttonText}>Africa</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={()=>navigation.navigate('quest', {continent: 'America'})} style = {styles.opacityStyle}>
-                <Text style = {styles.textStyle}>America</Text>
+            <TouchableOpacity onPress={()=>navigation.navigate('quest', {continent: 'America'})} style = {styles.button}>
+                <Text style = {styles.buttonText}>America</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={()=>navigation.navigate('quest', {continent: 'Oceania'})} style = {styles.opacityStyle}>
-                <Text style = {styles.textStyle}>Oceania</Text>
+            <TouchableOpacity onPress={()=>navigation.navigate('quest', {continent: 'Oceania'})} style = {styles.button}>
+                <Text style = {styles.buttonText}>Oceania</Text>
             </TouchableOpacity>
-        </ImageBackground>
+        </View>
     )
 }
 
 
 const styles = StyleSheet.create({
-    backgroundImageStyle: {width: '100%', height: '100%', flex: 1},
-    opacityStyle: {flex: 1, justifyContent: 'center', alignItems: 'center'},
-    textStyle: {color: 'black', fontSize: 45, backgroundColor: 'rgba(245,255,250,0.9)', borderRadius: 8}
+    backgroundImageStyle: {alignItems: 'center', justifyContent: 'center', flex: 1},
+    button: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 8,
+        paddingVertical: 8,
+        paddingHorizontal: 16,
+        borderWidth: 1,
+        backgroundColor: '#0569FF',
+        borderColor: '#0569FF',
+        height: '10%',
+        width: '50%', 
+        margin: 15
+    },
+    buttonText: {
+        fontSize: 30,
+        lineHeight: 28,
+        fontWeight: '600',
+        color: '#fff',
+      }
 })
 
 

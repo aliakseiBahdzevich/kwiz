@@ -5,7 +5,6 @@ import { RecordsType } from '../navigation/rootNavigation';
 import { useEffect, useState } from 'react';
 
 
-
 const RecordsScreen = ({navigation, route}: any) => {
 
 

@@ -41,7 +41,7 @@ const QuestScreen = ({navigation, route}: any) => {
     
     return(
         <>
-        <ImageBackground resizeMode="cover" style = {styles.backgroundImageStyle} source={{uri: 'https://abali.ru/wp-content/uploads/2011/01/rus_flag-1600x1200.jpg'}}>
+        <View style = {styles.backgroundImageStyle}>
         {questions && index!==undefined && <SvgUri style = {styles.svgStyle} uri={questions[index].flag} />}
         {questions && index!==undefined && 
         <FlatList 
@@ -69,8 +69,8 @@ const QuestScreen = ({navigation, route}: any) => {
                         }   
                     }
         }}/>}/>}
-        </ImageBackground>
-        {questions && index!==undefined && <Text style={styles.textStyle}>{index+1}/{questions.length}</Text>}
+        </View>
+        {questions && index!==undefined && <Text style={styles.buttonText}>{index+1}/{questions.length}</Text>}
         </>
     ) 
 }
@@ -79,8 +79,13 @@ const QuestScreen = ({navigation, route}: any) => {
 
 const styles = StyleSheet.create({
     svgStyle: {width: '100%', height: 196.5, marginTop: 0},
-    backgroundImageStyle: {width: '100%', height: '100%', flex: 1, justifyContent: 'center', alignItems: 'center'},
-    textStyle: {color: 'black', fontSize: 20, borderRadius: 8, textAlign: 'center'}
+    backgroundImageStyle: {alignItems: 'center', justifyContent: 'center', flex: 1},
+    buttonText: {
+        fontSize: 30,
+        lineHeight: 28,
+        fontWeight: '600',
+        color: '#fff',
+      }
 })
 
 
