@@ -86,20 +86,21 @@ const FinalScreen = ({navigation, route}: any) => {
     
 
     return(
-        <>
-        <View style = {styles.backgroundImageStyle}>
+        <ImageBackground source={{uri: 'https://img.lovepik.com/photo/20230421/medium/lovepik-europe-and-asia-white-isolated-elements-of-this-image-furnished-by-photo-image_352300123.jpg'}} style = {styles.backgroundImageStyle}>
+        <View style = {styles.viewStyle}>
             <Text style = {styles.buttonText}>Points: {route.params.points}</Text>
             <TextInput onChangeText={handleTextChange} value={nick} style = {styles.inputText} placeholder='Enter nickname'></TextInput>
             <TouchableOpacity disabled={disable} style = {styles.button} onPress={()=>{fun()}}>
-                <Text style={[styles.buttonText, {color: '#fff'}]}>{errorNick}Confirm</Text>
+                <Text style={styles.buttonText}>{errorNick}Confirm</Text>
             </TouchableOpacity>
         </View>
-        </>
+        </ImageBackground>
         
     )
 }
 
 const styles = StyleSheet.create({
+    viewStyle: {backgroundColor: 'rgba(0, 0, 0, 0.5)', ...StyleSheet.absoluteFillObject, alignItems: 'center', justifyContent: 'center', flex: 1},
     backgroundImageStyle: {alignItems: 'center', justifyContent: 'center', flex: 1},
     button: {
         alignItems: 'center',
@@ -118,17 +119,17 @@ const styles = StyleSheet.create({
         fontSize: 30,
         lineHeight: 30,
         fontWeight: '600',
-        color: '#000000',
+        color: '#fff',
         margin: 15
     },
     inputText: {
         height: 100,
         width: 300,
-        borderColor: '#0569FF',
+        borderColor: '#fff',
         fontSize: 30,
         lineHeight: 30,
         fontWeight: '600',
-        color: '#000000',
+        color: '#fff',
         margin: 15,
         borderWidth: 3,
         borderRadius: 8, 

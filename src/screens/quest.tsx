@@ -40,9 +40,11 @@ const QuestScreen = ({navigation, route}: any) => {
     console.log(index)
     
     return(
-        <>
-        <View style = {styles.backgroundImageStyle}>
-        {questions && index!==undefined && <SvgUri style = {styles.svgStyle} uri={questions[index].flag} />}
+        <ImageBackground source={{uri: 'https://img.lovepik.com/photo/20230421/medium/lovepik-europe-and-asia-white-isolated-elements-of-this-image-furnished-by-photo-image_352300123.jpg'}} style = {styles.backgroundImageStyle}>
+        <View style={styles.viewStyle} >
+            <View style={styles.viewSvg}>
+                {questions && index !== undefined && (<SvgUri style={styles.svgStyle} uri={questions[index].flag} />)}
+            </View>
         {questions && index!==undefined && 
         <FlatList
             style={{flex: 1}}
@@ -73,14 +75,16 @@ const QuestScreen = ({navigation, route}: any) => {
         {questions && index!==undefined && <Text style={styles.buttonTextBar}>{index+1}/{questions.length}</Text>}
         </View>
         
-        </>
+        </ImageBackground>
     ) 
 }
 
 
 
 const styles = StyleSheet.create({
-    svgStyle: {width: '100%', height: '30%', marginTop: 0},
+    viewStyle: {backgroundColor: 'rgba(0, 0, 0, 0.5)', ...StyleSheet.absoluteFillObject, alignItems: 'center', justifyContent: 'center', flex: 1},
+    viewSvg: {width: '95%', height: '24%', justifyContent: 'center', alignItems: 'center'},
+    svgStyle: {width: '95%', height: '98%', marginTop: 0, alignItems: 'center', justifyContent: 'center'},
     backgroundImageStyle: {alignItems: 'center', justifyContent: 'center', flex: 1},
     buttonText: {
         fontSize: 30,

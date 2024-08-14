@@ -6,6 +6,7 @@ import ContinentScreen from '../screens/continent';
 import QuestScreen from '../screens/quest';
 import FinalScreen from '../screens/finalScreen';
 import RecordsScreen from '../screens/records';
+import { TabViewProps } from 'react-native-tab-view';
 
 
 
@@ -32,7 +33,7 @@ export type RecordsType = {
 const MyStack = () => {
     return(
         <NavigationContainer>
-            <Stack.Navigator>
+            <Stack.Navigator screenOptions={{headerShown: false}}>
                 <Stack.Screen
                     name = 'home'
                     component = {HomeScreen}

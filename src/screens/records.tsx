@@ -10,12 +10,11 @@ const Europe = () => {
 
     const [europe, setEurope] = useState<RecordsType[] | null>(null)
     const [error, setError] = useState('')
-    const [index, setIndex] = useState(0)
 
     useEffect(()=>{
         getRecordsContinent('Europe')
             .then((res: any)=>{
-                setEurope(res)
+                setEurope(res.sort((a: RecordsType, b: RecordsType) => b.points - a.points))
             })
             .catch((er: any)=>{
                 setError(er)
@@ -24,9 +23,17 @@ const Europe = () => {
 
     return(
         <>
-        <View style={{ flex: 1, backgroundColor: '#fff' }}>
-            {europe && index!==undefined && <FlatList data={europe} renderItem={({item, index}) => <Text style={styles.buttonText}>{item.nickname}{item.points}{item.continent}</Text>}/>}
-        </View>
+        <ImageBackground source={{uri: 'https://oboi-telefon.ru/wallpapers/37186/32798.jpg'}} style={styles.backgroundImageStyle}>
+            <View style={{backgroundColor: 'rgba(0, 0, 0, 0.5)', ...StyleSheet.absoluteFillObject}}>
+                {europe && <FlatList data={europe} renderItem={({item, index}) => 
+                    <View style={styles.itemContainer}>
+                        <Text style={styles.nickname}>{item.nickname}</Text>
+                        <Text style={styles.points}>{item.points}</Text>
+                    </View>
+                }/>
+                }
+            </View>
+        </ImageBackground>
         </>
     )
 };
@@ -35,12 +42,11 @@ const Asia = () => {
 
     const [asia, setAsia] = useState<RecordsType[] | null>(null)
     const [error, setError] = useState('')
-    const [index, setIndex] = useState(0)
 
     useEffect(()=>{
         getRecordsContinent('Asia')
             .then((res: any)=>{
-                setAsia(res)
+                setAsia(res.sort((a: RecordsType, b: RecordsType) => b.points - a.points))
             })
             .catch((er: any)=>{
                 setError(er)
@@ -49,9 +55,17 @@ const Asia = () => {
 
     return(
         <>
-        <View style={styles.backgroundImageStyle}>
-            {asia && index!==undefined && <FlatList data={asia} renderItem={({item, index}) => <Text style={styles.buttonText}>{item.nickname}{item.points}{item.continent}</Text>}/>}
-        </View>
+        <ImageBackground source={{uri: 'https://w0.peakpx.com/wallpaper/238/767/HD-wallpaper-chinese-lantern-asia-chine-food-japan-love-night-people-street-sushi.jpg'}} style={styles.backgroundImageStyle}>
+            <View style={{backgroundColor: 'rgba(0, 0, 0, 0.5)', ...StyleSheet.absoluteFillObject}}>
+                {asia && <FlatList data={asia} renderItem={({item, index}) => 
+                    <View style={styles.itemContainer}>
+                        <Text style={styles.nickname}>{item.nickname}</Text>
+                        <Text style={styles.points}>{item.points}</Text>
+                    </View>
+                }/>
+                }
+            </View>
+        </ImageBackground>
         </>
     )
 };
@@ -60,12 +74,11 @@ const America = () => {
 
     const [america, setAmerica] = useState<RecordsType[] | null>(null)
     const [error, setError] = useState('')
-    const [index, setIndex] = useState(0)
 
     useEffect(()=>{
         getRecordsContinent('America')
             .then((res: any)=>{
-                setAmerica(res)
+                setAmerica(res.sort((a: RecordsType, b: RecordsType) => b.points - a.points))
             })
             .catch((er: any)=>{
                 setError(er)
@@ -74,9 +87,17 @@ const America = () => {
 
     return(
         <>
-        <View style={styles.backgroundImageStyle}>
-            {america && index!==undefined && <FlatList data={america} renderItem={({item, index}) => <Text style={styles.buttonText}>{item.nickname}{item.points}{item.continent}</Text>}/>}
-        </View>
+        <ImageBackground source={{uri: 'https://oboi-telefon.ru/wallpapers/134891/37098.jpg'}} style={styles.backgroundImageStyle}>
+            <View style={{backgroundColor: 'rgba(0, 0, 0, 0.5)', ...StyleSheet.absoluteFillObject}}>
+                {america && <FlatList data={america} renderItem={({item, index}) => 
+                    <View style={styles.itemContainer}>
+                        <Text style={styles.nickname}>{item.nickname}</Text>
+                        <Text style={styles.points}>{item.points}</Text>
+                    </View>
+                }/>
+                }
+            </View>
+        </ImageBackground>
         </>
     )
 };
@@ -85,12 +106,11 @@ const Africa = () => {
 
     const [africa, setAfrica] = useState<RecordsType[] | null>(null)
     const [error, setError] = useState('')
-    const [index, setIndex] = useState(0)
 
     useEffect(()=>{
         getRecordsContinent('Africa')
             .then((res: any)=>{
-                setAfrica(res)
+                setAfrica(res.sort((a: RecordsType, b: RecordsType) => b.points - a.points))
             })
             .catch((er: any)=>{
                 setError(er)
@@ -99,9 +119,17 @@ const Africa = () => {
 
     return(
         <>
-        <View style={styles.backgroundImageStyle}>
-            {africa && index!==undefined && <FlatList data={africa} renderItem={({item, index}) => <Text style={styles.buttonText}>{item.nickname}{item.points}{item.continent}</Text>}/>}
-        </View>
+        <ImageBackground source={{uri: 'https://www.3wallpapers.fr/wp-content/uploads/2012/11/Africa-3Wallpapers-iPhone-5.jpg'}} style={styles.backgroundImageStyle}>
+            <View style={{backgroundColor: 'rgba(0, 0, 0, 0.5)', ...StyleSheet.absoluteFillObject}}>
+                {africa && <FlatList data={africa} renderItem={({item, index}) => 
+                    <View style={styles.itemContainer}>
+                        <Text style={styles.nickname}>{item.nickname}</Text>
+                        <Text style={styles.points}>{item.points}</Text>
+                    </View>
+                }/>
+                }
+            </View>
+        </ImageBackground>
         </>
     )
 };
@@ -110,12 +138,11 @@ const Oceania = () => {
 
     const [oceania, setOceania] = useState<RecordsType[] | null>(null)
     const [error, setError] = useState('')
-    const [index, setIndex] = useState(0)
 
     useEffect(()=>{
         getRecordsContinent('Oceania')
             .then((res: any)=>{
-                setOceania(res)
+                setOceania(res.sort((a: RecordsType, b: RecordsType) => b.points - a.points))
             })
             .catch((er: any)=>{
                 setError(er)
@@ -123,11 +150,17 @@ const Oceania = () => {
     },[])
 
     return(
-        <>
-        <View style={styles.backgroundImageStyle}>
-            {oceania && index!==undefined && <FlatList data={oceania} renderItem={({item, index}) => <Text style={styles.buttonText}>{item.nickname}{item.points}{item.continent}</Text>}/>}
-        </View>
-        </>
+        <ImageBackground source={{uri: 'https://oboi-telefon.ru/wallpapers/10870/35651.jpg'}} style={styles.backgroundImageStyle}>
+            <View style={{backgroundColor: 'rgba(0, 0, 0, 0.5)', ...StyleSheet.absoluteFillObject}}>
+                {oceania && <FlatList data={oceania} renderItem={({item, index}) => 
+                    <View style={styles.itemContainer}>
+                        <Text style={styles.nickname}>{item.nickname}</Text>
+                        <Text style={styles.points}>{item.points}</Text>
+                    </View>
+                }/>
+                }
+            </View>
+        </ImageBackground>
     )
 };
 
@@ -154,7 +187,6 @@ const RecordsScreen = ({navigation, route}: any) => {
         { key: 'Oceania', title: 'Oceania' },
     ]);
 
-
     
     return(
         <TabView
@@ -178,7 +210,7 @@ const RecordsScreen = ({navigation, route}: any) => {
 }
 
 const styles = StyleSheet.create({
-    backgroundImageStyle: {alignItems: 'center', justifyContent: 'center', flex: 1},
+    backgroundImageStyle: {flex: 1},
     button: {
         alignItems: 'center',
         justifyContent: 'center',
@@ -192,15 +224,24 @@ const styles = StyleSheet.create({
         width: '50%', 
         margin: 15
     },
-    buttonText: {
+    itemContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        padding: 10,
+    },
+    nickname: {
         fontSize: 25,
         lineHeight: 25,
         fontWeight: '600',
-        color: '#000',
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginBottom: 3
-      }
+        color: 'white'
+    },
+    points: {
+        fontSize: 25,
+        lineHeight: 25,
+        fontWeight: '600',
+        color: 'white'
+    }
 })
 
 export default RecordsScreen

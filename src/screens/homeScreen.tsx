@@ -6,19 +6,22 @@ import { View, Text, TouchableOpacity, StyleSheet, ImageBackground } from 'react
 
 const HomeScreen = ({navigation}: any) => {
     return(
-        <View style = {styles.backgroundImageStyle}>
+        <ImageBackground source={{uri: 'https://img.lovepik.com/photo/20230421/medium/lovepik-europe-and-asia-white-isolated-elements-of-this-image-furnished-by-photo-image_352300123.jpg'}} style = {styles.backgroundImageStyle}>
+            <View style={styles.viewStyle}>
             <TouchableOpacity onPress={()=>navigation.navigate('continent')} style = {styles.button}>
                 <Text style = {styles.buttonText}>START</Text>
             </TouchableOpacity>
             <TouchableOpacity onPress={()=>navigation.navigate('records')} style = {styles.button}>
                 <Text style = {styles.buttonText}>RECORDS</Text>
             </TouchableOpacity>
-        </View>
+            </View>
+        </ImageBackground>
     )
 }
 
 
 const styles = StyleSheet.create({
+    viewStyle: {backgroundColor: 'rgba(0, 0, 0, 0.5)', ...StyleSheet.absoluteFillObject, alignItems: 'center', justifyContent: 'center', flex: 1},
     backgroundImageStyle: {alignItems: 'center', justifyContent: 'center', flex: 1},
     button: {
         alignItems: 'center',
