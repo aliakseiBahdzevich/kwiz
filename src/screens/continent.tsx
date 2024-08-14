@@ -5,7 +5,7 @@ import { View, Text, TouchableOpacity, StyleSheet, ImageBackground } from 'react
 
 const ContinentScreen = ({navigation, route}: any) => {
     return(
-        <ImageBackground source={{uri: 'https://img.lovepik.com/photo/20230421/medium/lovepik-europe-and-asia-white-isolated-elements-of-this-image-furnished-by-photo-image_352300123.jpg'}} style = {styles.backgroundImageStyle}>
+        <ImageBackground source={{uri: 'https://photopole.ru/wp-content/uploads/globus-2.webp'}} style = {styles.backgroundImageStyle}>
             <View style={styles.viewStyle}>
             <TouchableOpacity onPress={()=>navigation.navigate('quest', {continent: 'Europe'})} style = {styles.button}>
                 <Text style = {styles.buttonText}>Europe</Text>

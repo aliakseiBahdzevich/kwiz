@@ -86,10 +86,10 @@ const FinalScreen = ({navigation, route}: any) => {
     
 
     return(
-        <ImageBackground source={{uri: 'https://img.lovepik.com/photo/20230421/medium/lovepik-europe-and-asia-white-isolated-elements-of-this-image-furnished-by-photo-image_352300123.jpg'}} style = {styles.backgroundImageStyle}>
+        <ImageBackground source={{uri: 'https://photopole.ru/wp-content/uploads/globus-2.webp'}} style = {styles.backgroundImageStyle}>
         <View style = {styles.viewStyle}>
             <Text style = {styles.buttonText}>Points: {route.params.points}</Text>
-            <TextInput onChangeText={handleTextChange} value={nick} style = {styles.inputText} placeholder='Enter nickname'></TextInput>
+            <TextInput onChangeText={handleTextChange} value={nick} style = {styles.inputText} placeholder='Enter nickname' placeholderTextColor='rgba(255, 255, 255, 0.8)'></TextInput>
             <TouchableOpacity disabled={disable} style = {styles.button} onPress={()=>{fun()}}>
                 <Text style={styles.buttonText}>{errorNick}Confirm</Text>
             </TouchableOpacity>

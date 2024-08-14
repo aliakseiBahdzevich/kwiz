@@ -40,7 +40,7 @@ const QuestScreen = ({navigation, route}: any) => {
     console.log(index)
     
     return(
-        <ImageBackground source={{uri: 'https://img.lovepik.com/photo/20230421/medium/lovepik-europe-and-asia-white-isolated-elements-of-this-image-furnished-by-photo-image_352300123.jpg'}} style = {styles.backgroundImageStyle}>
+        <ImageBackground source={{uri: 'https://photopole.ru/wp-content/uploads/globus-2.webp'}} style = {styles.backgroundImageStyle}>
         <View style={styles.viewStyle} >
             <View style={styles.viewSvg}>
                 {questions && index !== undefined && (<SvgUri style={styles.svgStyle} uri={questions[index].flag} />)}
@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
         fontSize: 25,
         lineHeight: 25,
         fontWeight: '600',
-        color: '#000',
+        color: 'white',
         alignItems: 'center',
         justifyContent: 'center',
         marginBottom: 3

@@ -25,6 +25,10 @@ const Europe = () => {
         <>
         <ImageBackground source={{uri: 'https://oboi-telefon.ru/wallpapers/37186/32798.jpg'}} style={styles.backgroundImageStyle}>
             <View style={{backgroundColor: 'rgba(0, 0, 0, 0.5)', ...StyleSheet.absoluteFillObject}}>
+                <View style = {[styles.itemContainer, {borderBottomWidth: 3, borderColor: 'white'}]}>
+                    <Text style={[styles.nickname, {fontSize: 30, lineHeight: 30, fontWeight: '800'}]}>Nickname</Text>
+                    <Text style={[styles.nickname, {fontSize: 30, lineHeight: 30, fontWeight: '800'}]}>Points</Text>
+                </View>
                 {europe && <FlatList data={europe} renderItem={({item, index}) => 
                     <View style={styles.itemContainer}>
                         <Text style={styles.nickname}>{item.nickname}</Text>
@@ -57,6 +61,10 @@ const Asia = () => {
         <>
         <ImageBackground source={{uri: 'https://w0.peakpx.com/wallpaper/238/767/HD-wallpaper-chinese-lantern-asia-chine-food-japan-love-night-people-street-sushi.jpg'}} style={styles.backgroundImageStyle}>
             <View style={{backgroundColor: 'rgba(0, 0, 0, 0.5)', ...StyleSheet.absoluteFillObject}}>
+                <View style = {[styles.itemContainer, {borderBottomWidth: 3, borderColor: 'white'}]}>
+                    <Text style={[styles.nickname, {fontSize: 30, lineHeight: 30, fontWeight: '800'}]}>Nickname</Text>
+                    <Text style={[styles.nickname, {fontSize: 30, lineHeight: 30, fontWeight: '800'}]}>Points</Text>
+                </View>
                 {asia && <FlatList data={asia} renderItem={({item, index}) => 
                     <View style={styles.itemContainer}>
                         <Text style={styles.nickname}>{item.nickname}</Text>
@@ -89,6 +97,11 @@ const America = () => {
         <>
         <ImageBackground source={{uri: 'https://oboi-telefon.ru/wallpapers/134891/37098.jpg'}} style={styles.backgroundImageStyle}>
             <View style={{backgroundColor: 'rgba(0, 0, 0, 0.5)', ...StyleSheet.absoluteFillObject}}>
+                <View style = {[styles.itemContainer, {borderBottomWidth: 3, borderColor: 'white'}]}>
+                    <Text style={[styles.nickname, {fontSize: 30, lineHeight: 30, fontWeight: '800'}]}>Nickname</Text>
+                    
+                    <Text style={[styles.nickname, {fontSize: 30, lineHeight: 30, fontWeight: '800'}]}>Points</Text>
+                </View>
                 {america && <FlatList data={america} renderItem={({item, index}) => 
                     <View style={styles.itemContainer}>
                         <Text style={styles.nickname}>{item.nickname}</Text>
@@ -121,6 +134,10 @@ const Africa = () => {
         <>
         <ImageBackground source={{uri: 'https://www.3wallpapers.fr/wp-content/uploads/2012/11/Africa-3Wallpapers-iPhone-5.jpg'}} style={styles.backgroundImageStyle}>
             <View style={{backgroundColor: 'rgba(0, 0, 0, 0.5)', ...StyleSheet.absoluteFillObject}}>
+                <View style = {[styles.itemContainer, {borderBottomWidth: 3, borderColor: 'white'}]}>
+                    <Text style={[styles.nickname, {fontSize: 30, lineHeight: 30, fontWeight: '800'}]}>Nickname</Text>
+                    <Text style={[styles.nickname, {fontSize: 30, lineHeight: 30, fontWeight: '800'}]}>Points</Text>
+                </View>
                 {africa && <FlatList data={africa} renderItem={({item, index}) => 
                     <View style={styles.itemContainer}>
                         <Text style={styles.nickname}>{item.nickname}</Text>
@@ -152,6 +169,10 @@ const Oceania = () => {
     return(
         <ImageBackground source={{uri: 'https://oboi-telefon.ru/wallpapers/10870/35651.jpg'}} style={styles.backgroundImageStyle}>
             <View style={{backgroundColor: 'rgba(0, 0, 0, 0.5)', ...StyleSheet.absoluteFillObject}}>
+                <View style = {[styles.itemContainer, {borderBottomWidth: 3, borderColor: 'white'}]}>
+                    <Text style={[styles.nickname, {fontSize: 30, lineHeight: 30, fontWeight: '800'}]}>Nickname</Text>
+                    <Text style={[styles.nickname, {fontSize: 30, lineHeight: 30, fontWeight: '800'}]}>Points</Text>
+                </View>
                 {oceania && <FlatList data={oceania} renderItem={({item, index}) => 
                     <View style={styles.itemContainer}>
                         <Text style={styles.nickname}>{item.nickname}</Text>
