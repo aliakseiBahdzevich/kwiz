@@ -46,7 +46,7 @@ const FlatListItem = ({index, onPress, answerText, isCorrectAnswer, disable, set
 }
 
 const styles = StyleSheet.create({
-    backgroundImageStyle: {alignItems: 'center', justifyContent: 'center', flex: 1},
+    backgroundImageStyle: {alignItems: 'center', justifyContent: 'center', flex: 1, margin: 15},
     button: {
         alignItems: 'center',
         justifyContent: 'center',
@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
         lineHeight: 30,
         fontWeight: '600',
         color: '#fff',
-      }
+    }
 })
 
 export default FlatListItem

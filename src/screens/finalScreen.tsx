@@ -17,6 +17,15 @@ const FinalScreen = ({navigation, route}: any) => {
     const [errorNick, setErrorNick] = useState('')
     
 
+    useEffect(() => {
+        const unsubscribe = navigation.addListener('beforeRemove', (e: any) => {
+          e.preventDefault();
+          navigation.dispatch(e.data.action);
+          navigation.navigate('home');
+        });
+        return unsubscribe;
+    }, [navigation]);
+
 
     useEffect(()=>{
         if(nick.length===0){

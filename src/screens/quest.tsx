@@ -44,7 +44,8 @@ const QuestScreen = ({navigation, route}: any) => {
         <View style = {styles.backgroundImageStyle}>
         {questions && index!==undefined && <SvgUri style = {styles.svgStyle} uri={questions[index].flag} />}
         {questions && index!==undefined && 
-        <FlatList 
+        <FlatList
+            style={{flex: 1}}
             data={answers} 
             renderItem={({item})=>
                 <FlatListItem isCorrectAnswer={questions[index].rightAnswer===item} setDisable={setDisable} disable={disable} answerText={item} index={index} onPress={(index)=>{
@@ -69,8 +70,9 @@ const QuestScreen = ({navigation, route}: any) => {
                         }   
                     }
         }}/>}/>}
+        {questions && index!==undefined && <Text style={styles.buttonTextBar}>{index+1}/{questions.length}</Text>}
         </View>
-        {questions && index!==undefined && <Text style={styles.buttonText}>{index+1}/{questions.length}</Text>}
+        
         </>
     ) 
 }
@@ -78,13 +80,35 @@ const QuestScreen = ({navigation, route}: any) => {
 
 
 const styles = StyleSheet.create({
-    svgStyle: {width: '100%', height: 196.5, marginTop: 0},
+    svgStyle: {width: '100%', height: '30%', marginTop: 0},
     backgroundImageStyle: {alignItems: 'center', justifyContent: 'center', flex: 1},
     buttonText: {
         fontSize: 30,
         lineHeight: 28,
         fontWeight: '600',
         color: '#fff',
+      },
+    button: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 8,
+        paddingVertical: 8,
+        paddingHorizontal: 16,
+        borderWidth: 1,
+        backgroundColor: '#0569FF',
+        borderColor: '#0569FF',
+        height: 100,
+        width: 300, 
+        margin: 15
+    },
+    buttonTextBar: {
+        fontSize: 25,
+        lineHeight: 25,
+        fontWeight: '600',
+        color: '#000',
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginBottom: 3
       }
 })
 
